@@ -1,0 +1,12 @@
+.container {
+    width: 43.75rem;
+    position: relative;
+    box-sizing: border-box;
+}
+
+@media (max-width: 46.875rem) {
+    .container {
+        width: 100%;
+        padding: 0 1.25rem;
+    }
+}

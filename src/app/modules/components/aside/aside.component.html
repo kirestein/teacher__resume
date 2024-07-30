@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="aside">
+        <div class="aside__header">
+          <img
+            src="/assets/img/erik1.jpeg"
+            alt="Foto do usuário"
+            class="aside__header__img"
+          />
+          <h3 class="aside__title">Erik Proença, {{ calcAge() }}</h3>
+          <hr class="hr">
+        </div>
+        <div class="aside__body">
+          <ul class="aside__body__personal__info">
+            <li class="aside__body__personal__info__item">
+                <img class="aside__body__personal__info__item__icon" src="/assets/icons/address.svg" alt="" />
+                <span>Endereço:</span> {{ address }}
+              </li>
+            <li class="aside__body__personal__info__item">
+                <img class="aside__body__personal__info__item__icon" src="/assets/icons/whatsapp.svg" alt="" />
+                <span>Telefone:</span> <a 
+                href="https://api.whatsapp.com/send?phone=5511986165932" 
+                target="_blank">
+                +55 11 986165932
+            </a>
+            </li>
+            <li class="aside__body__personal__info__item">
+                <img class="aside__body__personal__info__item__icon" src="/assets/icons/email.svg" alt="" />
+              <span>E-mail:</span> <a 
+              href="mailto:erik.proenca2011@gmail.com" 
+              target="_blank">
+               erik.proenca2011&#64;gmail.com
+          </a>
+            </li>
+            <li class="aside__body__personal__info__item">
+                <img class="aside__body__personal__info__item__icon" src="/assets/icons/linkedin.svg" alt="" />
+                <span>Linkedin:</span> 
+                <a 
+                    href="https://linkedin.com/in/erikproenca" 
+                    target="_blank">
+                    &#64;erikproenca
+                </a>
+              </li>
+          </ul>
+          <hr class="hr">
+          <div class="aside__body__professional_goal">
+            <div class="aside__body__profissional__goal__title">
+              <img src="/assets/icons/goal.svg" alt="goal icon" class="aside__body__professional__goal__title__img">
+              Objetivo Profissional:
+            </div>
+            <p class="aside__body__profissional__goal__text">
+              Dedicar-me ao desenvolvimento e implementação de currículos de matemática 
+              que sejam desafiadores e envolventes, com o objetivo de preparar os alunos 
+              para os desafios acadêmicos futuros e para a resolução de problemas no 
+              mundo real, enquanto promovo um amor duradouro pela matemática.
+            </p>
+          </div>
+          <hr class="hr">
+          <div class="aside__body__languages">
+            <div class="aside__body__languages__title">
+              <img src="/assets/icons/languages.svg" alt="languages icon" class="aside__body__languages__title__img">
+              Idiomas:
+            </div>
+            <ul class="aside__body__languages__list">
+              <li class="aside__body__languages__list__item">
+                <span>Português:</span> Nativo
+              </li>
+              <li class="aside__body__languages__list__item">
+                <span>Inglês:</span> Avançado
+              </li>
+              <li class="aside__body__languages__list__item">
+                <span>Francês:</span> Intermediário
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

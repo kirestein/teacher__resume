@@ -1,0 +1,22 @@
+.container
+    display: grid
+    grid-template-columns: 20% auto
+    grid-template-rows: 100%
+    grid-template-areas: "aside main"
+    gap: 1rem
+    // background-color: var(--white)
+    height: 100%
+    width: 100%
+
+.aside
+    grid-area: aside
+    background-color: var(--primary-010)
+    z-index: 1
+    display: flex
+    height: 100%
+    overflow: auto
+
+.main
+    grid-area: main
+    z-index: 1
+    overflow: auto
