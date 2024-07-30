@@ -6,7 +6,12 @@ import { ContentComponent } from '../../components/content/content.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AsideComponent, ContentComponent],
+  imports: [
+    CommonModule, 
+    AsideComponent, 
+    ContentComponent,
+    
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass'
 })
