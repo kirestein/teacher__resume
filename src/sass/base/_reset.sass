@@ -1,45 +1,188 @@
-/* You can add global styles to this file, and also import other style files */
-:root
-    .hr
-        border: 1px solid var(--secondary)
-        width: 100%
-        margin: 1rem 0
-    ::-webkit-scrollbar
-        width: 1rem
-        
-    ::-webkit-scrollbar-track
-        // background: var(--primary)
-    
-    ::-webkit-scrollbar-thumb
-        background: var(--primary-010)
-        border-radius: .2rem
-    
-html,
-body 
-  height: 100%
+/* Modern Reset and Base Styles */
 
-body 
-  margin: 0
-  font-family: Roboto, "Helvetica Neue", sans-serif
-  background: var(--black)
+// Smooth scrolling and better box-sizing
+*,
+*::before,
+*::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
 
+html
+    scroll-behavior: smooth
+    font-size: 16px
+    @media (max-width: 768px)
+        font-size: 14px
 
-h1, h2, h3 
-    font-size: 1.5rem
+body
+    height: 100%
+    margin: 0
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+    background: var(--bg-primary)
+    color: var(--text-primary)
+    line-height: 1.6
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
 
+// Typography Scale
+h1
+    font-size: clamp(2rem, 4vw, 3.5rem)
+    font-weight: 700
+    line-height: 1.2
+    letter-spacing: -0.02em
+    color: var(--text-primary)
+    margin-bottom: 1rem
 
-h1, h2, h3, a 
-    color: var(--white)
-    text-decoration: none
+h2
+    font-size: clamp(1.5rem, 3vw, 2.5rem)
+    font-weight: 600
+    line-height: 1.3
+    letter-spacing: -0.01em
+    color: var(--text-primary)
+    margin-bottom: 0.75rem
 
+h3
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem)
+    font-weight: 600
+    line-height: 1.4
+    color: var(--text-primary)
+    margin-bottom: 0.5rem
 
-p 
-    color: var(--gray)
+h4
+    font-size: clamp(1.125rem, 2vw, 1.5rem)
+    font-weight: 500
+    line-height: 1.4
+    color: var(--text-secondary)
+    margin-bottom: 0.5rem
+
+p
+    color: var(--text-secondary)
     font-size: 1rem
-    margin: 0.8rem 0
+    line-height: 1.6
+    margin-bottom: 1rem
+    
+    &.text-muted
+        color: var(--text-muted)
+        font-size: 0.875rem
 
+a
+    color: var(--text-accent)
+    text-decoration: none
+    transition: color 0.2s ease
+    
+    &:hover
+        color: var(--primary-light)
+        text-decoration: underline
 
-ul 
+ul, ol
     list-style: none
     padding: 0
     margin: 0
+
+// Custom scrollbar
+::-webkit-scrollbar
+    width: 8px
+    height: 8px
+
+::-webkit-scrollbar-track
+    background: var(--bg-secondary)
+    border-radius: 4px
+
+::-webkit-scrollbar-thumb
+    background: var(--primary)
+    border-radius: 4px
+    transition: background 0.2s ease
+    
+    &:hover
+        background: var(--primary-light)
+
+// Custom HR
+.hr
+    border: none
+    height: 1px
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent)
+    width: 100%
+    margin: 1.5rem 0
+    
+    &.solid
+        background: var(--border-color)
+
+// Utility classes
+.text-gradient
+    background: var(--gradient-primary)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+
+.card
+    background: var(--bg-card)
+    border-radius: 12px
+    padding: 1.5rem
+    box-shadow: var(--shadow-md)
+    border: 1px solid var(--border-color)
+    transition: all 0.3s ease
+    
+    &:hover
+        transform: translateY(-2px)
+        box-shadow: var(--shadow-lg)
+        background: var(--bg-card-hover)
+
+.btn
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 0.75rem 1.5rem
+    border-radius: 8px
+    font-weight: 500
+    text-decoration: none
+    transition: all 0.2s ease
+    cursor: pointer
+    border: none
+    
+    &.btn-primary
+        background: var(--gradient-primary)
+        color: var(--white)
+        
+        &:hover
+            transform: translateY(-1px)
+            box-shadow: var(--shadow-md)
+    
+    &.btn-outline
+        background: transparent
+        color: var(--primary)
+        border: 1px solid var(--primary)
+        
+        &:hover
+            background: var(--primary)
+            color: var(--white)
+
+// Animation utilities
+@keyframes fadeInUp
+    from
+        opacity: 0
+        transform: translateY(20px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1
+
+.animate-fade-in-up
+    animation: fadeInUp 0.6s ease-out
+
+.animate-fade-in
+    animation: fadeIn 0.4s ease-out
+
+// Focus styles
+*:focus
+    outline: 2px solid var(--primary)
+    outline-offset: 2px
+
+// Selection styles
+::selection
+    background: var(--primary)
+    color: var(--white)
