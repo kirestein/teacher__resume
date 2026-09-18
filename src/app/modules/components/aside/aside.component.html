@@ -1,5 +1,5 @@
 <div class="container animate-fade-in">
-  <div class="aside__header">
+  <header class="aside__header">
     <img
       src="/assets/img/erik1.jpeg"
       alt="Foto de Erik Proença"
@@ -7,66 +7,78 @@
       loading="lazy"
     />
     <h1 class="aside__title">Erik Proença, {{ calcAge() }}</h1>
+    <button
+      type="button"
+      class="aside__download-btn"
+      (click)="onDownload()"
+    >
+      <img src="/assets/img/download.svg" alt="" aria-hidden="true" />
+      Baixar Currículo
+    </button>
     <div class="hr"></div>
-  </div>
-  
+  </header>
+
   <div class="aside__body">
-    <section class="aside__body__personal__info">
+    <section class="aside__body__personal__info" aria-label="Informações de contato">
       <div class="aside__body__personal__info__item">
-        <img 
-          class="aside__body__personal__info__item__icon" 
-          src="/assets/icons/address.svg" 
-          alt="Ícone de endereço"
+        <img
+          class="aside__body__personal__info__item__icon"
+          src="/assets/icons/address.svg"
+          alt=""
+          aria-hidden="true"
           loading="lazy"
         />
-        <span>Endereço:</span> 
-        <span>{{ address }}</span>
+        <span>Localização:</span>
+        <span>{{ location }}</span>
       </div>
-      
+
       <div class="aside__body__personal__info__item">
-        <img 
-          class="aside__body__personal__info__item__icon" 
-          src="/assets/icons/whatsapp.svg" 
-          alt="Ícone do WhatsApp"
+        <img
+          class="aside__body__personal__info__item__icon"
+          src="/assets/icons/whatsapp.svg"
+          alt=""
+          aria-hidden="true"
           loading="lazy"
         />
-        <span>Telefone:</span> 
-        <a 
-          href="https://api.whatsapp.com/send?phone=5511986165932" 
+        <span>Telefone:</span>
+        <a
+          href="https://api.whatsapp.com/send?phone=5511986165932"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Entrar em contato via WhatsApp">
           +55 11 986165932
         </a>
       </div>
-      
+
       <div class="aside__body__personal__info__item">
-        <img 
-          class="aside__body__personal__info__item__icon" 
-          src="/assets/icons/email.svg" 
-          alt="Ícone de e-mail"
+        <img
+          class="aside__body__personal__info__item__icon"
+          src="/assets/icons/email.svg"
+          alt=""
+          aria-hidden="true"
           loading="lazy"
         />
-        <span>E-mail:</span> 
-        <a 
-          href="mailto:erik.proenca2011@gmail.com" 
+        <span>E-mail:</span>
+        <a
+          href="mailto:erik.proenca2011@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Enviar e-mail">
           erik.proenca2011&#64;gmail.com
         </a>
       </div>
-      
+
       <div class="aside__body__personal__info__item">
-        <img 
-          class="aside__body__personal__info__item__icon" 
-          src="/assets/icons/linkedin.svg" 
-          alt="Ícone do LinkedIn"
+        <img
+          class="aside__body__personal__info__item__icon"
+          src="/assets/icons/linkedin.svg"
+          alt=""
+          aria-hidden="true"
           loading="lazy"
         />
-        <span>LinkedIn:</span> 
-        <a 
-          href="https://linkedin.com/in/erikproenca" 
+        <span>LinkedIn:</span>
+        <a
+          href="https://linkedin.com/in/erikproenca"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no LinkedIn">
@@ -74,26 +86,27 @@
         </a>
       </div>
     </section>
-    
+
     <div class="hr"></div>
-    
-    <section class="aside__body__professional_goal">
-      <h3 class="aside__body__profissional__goal__title">
-        <img 
-          src="/assets/icons/goal.svg" 
-          alt="Ícone de objetivo" 
-          class="aside__body__professional__goal__title__img"
+
+    <section class="aside__body__summary">
+      <h3 class="aside__body__summary__title">
+        <img
+          src="/assets/icons/goal.svg"
+          alt=""
+          aria-hidden="true"
+          class="aside__body__summary__title__img"
           loading="lazy"
         >
-        Objetivo Profissional
+        Resumo sobre mim
       </h3>
-      <p class="aside__body__profissional__goal__text">
-        Atuar como educador especializado em Matemática e Tecnologia Educacional, 
-        desenvolvendo currículos inovadores que integrem pensamento matemático, 
-        computação e metodologias ativas. Busco criar experiências de aprendizagem 
-        transformadoras que preparem estudantes para os desafios do século XXI, 
-        promovendo literacia digital, raciocínio lógico e competências 
-        socioemocionais essenciais para o sucesso acadêmico e profissional.
+      <p class="aside__body__summary__text">
+        Educador especializado em Matemática e Tecnologia Educacional, dedicado a
+        desenvolver currículos inovadores que integram pensamento matemático,
+        computação e metodologias ativas. Acredito em criar experiências de
+        aprendizagem transformadoras que preparam estudantes para os desafios do
+        século XXI, promovendo literacia digital, raciocínio lógico e competências
+        socioemocionais.
       </p>
     </section>
     
@@ -101,9 +114,10 @@
     
     <section class="aside__body__languages">
       <h3 class="aside__body__languages__title">
-        <img 
-          src="/assets/icons/languages.svg" 
-          alt="Ícone de idiomas" 
+        <img
+          src="/assets/icons/languages.svg"
+          alt=""
+          aria-hidden="true"
           class="aside__body__languages__title__img"
           loading="lazy"
         >

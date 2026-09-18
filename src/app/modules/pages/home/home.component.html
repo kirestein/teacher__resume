@@ -1,4 +1,4 @@
 <div class="container">
-    <div class="aside"><app-aside></app-aside></div>
-    <div class="main"><app-content></app-content></div>
+    <aside class="aside" *ngIf="!(isMobile$ | async)"><app-aside></app-aside></aside>
+    <main class="main"><app-content></app-content></main>
 </div>

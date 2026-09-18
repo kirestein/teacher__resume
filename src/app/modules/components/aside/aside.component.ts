@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-aside',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.sass'
 })
@@ -19,7 +18,7 @@ export class AsideComponent {
   birthdayMonth = 9;
   birthdayYear = 1984;
 
-  public address = 'Rua Raul José Braconaro, 41'
+  public location = 'São Paulo, SP';
 
   calcAge = () => {
     let age = this.year - this.birthdayYear;
@@ -29,6 +28,7 @@ export class AsideComponent {
     return age;
   }
 
-  // age = year
-
+  onDownload(): void {
+    window.print();
+  }
 }
