@@ -1,0 +1,85 @@
+<div class="print-resume">
+  <header class="print-resume__header">
+    <div class="print-resume__topbar">
+      <img class="print-resume__photo" [src]="resume.photo" alt="" />
+      <ul class="print-resume__contacts">
+        <li>{{ resume.email }}</li>
+        <li>{{ resume.phone }}</li>
+        <li>{{ resume.location }}</li>
+      </ul>
+    </div>
+    <div class="print-resume__nameband">
+      <h1>{{ resume.name }}</h1>
+    </div>
+  </header>
+
+  <main class="print-resume__body">
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Perfil Profissional</h2>
+      <p class="print-resume__paragraph">{{ resume.summary }}</p>
+    </section>
+
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Experiência Profissional</h2>
+      <article class="print-resume__entry" *ngFor="let job of resume.experience">
+        <div class="print-resume__entry-header">
+          <h3 class="print-resume__entry-title">{{ job.title }}</h3>
+          <span class="print-resume__entry-date">{{ job.date }}</span>
+        </div>
+        <p class="print-resume__entry-subtitle">{{ job.function }}</p>
+        <ul class="print-resume__entry-list">
+          <li *ngFor="let line of job.description">{{ line }}</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Formação Acadêmica</h2>
+      <article class="print-resume__entry" *ngFor="let course of resume.education">
+        <div class="print-resume__entry-header">
+          <h3 class="print-resume__entry-title">{{ course.title }}</h3>
+          <span class="print-resume__entry-date">{{ course.date }}</span>
+        </div>
+        <p class="print-resume__entry-subtitle">{{ course.institution }}</p>
+        <ul class="print-resume__entry-list">
+          <li *ngFor="let line of course.description">{{ line }}</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Pesquisa</h2>
+      <article class="print-resume__entry">
+        <div class="print-resume__entry-header">
+          <h3 class="print-resume__entry-title">{{ resume.research.title }}</h3>
+        </div>
+        <p class="print-resume__entry-subtitle">{{ resume.research.source }}</p>
+        <p class="print-resume__paragraph" *ngFor="let paragraph of resume.research.paragraphs">{{ paragraph }}</p>
+      </article>
+    </section>
+
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Habilidades</h2>
+      <ul class="print-resume__skills">
+        <li *ngFor="let skill of resume.skills">
+          <strong>{{ skill.label }}</strong> {{ skill.description }}
+        </li>
+      </ul>
+    </section>
+
+    <section class="print-resume__section">
+      <h2 class="print-resume__section-title">Idiomas</h2>
+      <div class="print-resume__languages">
+        <div class="print-resume__language" *ngFor="let language of resume.languages">
+          <div class="print-resume__language-label">
+            <span>{{ language.name }}</span>
+            <span>{{ language.level }}</span>
+          </div>
+          <div class="print-resume__language-bar">
+            <div class="print-resume__language-bar-fill" [style.width.%]="language.proficiency"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

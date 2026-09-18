@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ResumeDataService } from '../../services/resume-data.service';
 
 @Component({
   selector: 'app-aside',
@@ -9,24 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './aside.component.sass'
 })
 export class AsideComponent {
-  fullDateTime: Date = new Date();
-  date = this.fullDateTime.getDate();
-  month = this.fullDateTime.getMonth() + 1;
-  year = this.fullDateTime.getFullYear();
-
-  birthdayDate = 15;
-  birthdayMonth = 9;
-  birthdayYear = 1984;
-
-  public location = 'São Paulo, SP';
-
-  calcAge = () => {
-    let age = this.year - this.birthdayYear;
-    if (this.month < this.birthdayMonth || (this.month === this.birthdayMonth && this.date < this.birthdayDate)) {
-      age--;
-    }
-    return age;
-  }
+  constructor(public resume: ResumeDataService) {}
 
   onDownload(): void {
     window.print();

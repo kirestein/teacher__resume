@@ -18,6 +18,10 @@
         height: auto
         gap: 0
 
+    // The interactive UI is swapped for app-print-resume when printing
+    @media print
+        display: none !important
+
 .aside
     grid-area: aside
     background: var(--bg-secondary)

@@ -16,18 +16,10 @@
         @media screen and (max-width: 780px)
             padding: 1rem
 
-        .print-only
-            display: none
-
+        // The whole interactive tab group is hidden for print in favor of
+        // app-print-resume (see home.component.html / print-resume.component)
         @media print
-            display: block !important
-            padding: 0 !important
-
-            mat-tab-group
-                display: none !important
-
-            .print-only
-                display: block !important
+            display: none !important
 
         // Angular Material Tab Customization
         ::ng-deep .mat-tab-group

@@ -1,12 +1,12 @@
 <div class="container animate-fade-in">
   <header class="aside__header">
     <img
-      src="/assets/img/erik1.jpeg"
+      [src]="resume.photo"
       alt="Foto de Erik Proença"
       class="aside__header__img"
       loading="lazy"
     />
-    <h1 class="aside__title">Erik Proença, {{ calcAge() }}</h1>
+    <h1 class="aside__title">{{ resume.name }}, {{ resume.age }}</h1>
     <button
       type="button"
       class="aside__download-btn"
@@ -29,7 +29,7 @@
           loading="lazy"
         />
         <span>Localização:</span>
-        <span>{{ location }}</span>
+        <span>{{ resume.location }}</span>
       </div>
 
       <div class="aside__body__personal__info__item">
@@ -42,11 +42,11 @@
         />
         <span>Telefone:</span>
         <a
-          href="https://api.whatsapp.com/send?phone=5511986165932"
+          [href]="resume.whatsappHref"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Entrar em contato via WhatsApp">
-          +55 11 986165932
+          {{ resume.phone }}
         </a>
       </div>
 
@@ -60,11 +60,11 @@
         />
         <span>E-mail:</span>
         <a
-          href="mailto:erik.proenca2011@gmail.com"
+          [href]="'mailto:' + resume.email"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Enviar e-mail">
-          erik.proenca2011&#64;gmail.com
+          {{ resume.email }}
         </a>
       </div>
 
@@ -78,11 +78,11 @@
         />
         <span>LinkedIn:</span>
         <a
-          href="https://linkedin.com/in/erikproenca"
+          [href]="resume.linkedinHref"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no LinkedIn">
-          &#64;erikproenca
+          {{ resume.linkedinHandle }}
         </a>
       </div>
     </section>
@@ -100,18 +100,11 @@
         >
         Resumo sobre mim
       </h3>
-      <p class="aside__body__summary__text">
-        Educador especializado em Matemática e Tecnologia Educacional, dedicado a
-        desenvolver currículos inovadores que integram pensamento matemático,
-        computação e metodologias ativas. Acredito em criar experiências de
-        aprendizagem transformadoras que preparam estudantes para os desafios do
-        século XXI, promovendo literacia digital, raciocínio lógico e competências
-        socioemocionais.
-      </p>
+      <p class="aside__body__summary__text">{{ resume.summary }}</p>
     </section>
-    
+
     <div class="hr"></div>
-    
+
     <section class="aside__body__languages">
       <h3 class="aside__body__languages__title">
         <img
@@ -124,14 +117,8 @@
         Idiomas
       </h3>
       <div class="aside__body__languages__list">
-        <div class="aside__body__languages__list__item">
-          <span>Português:</span> Nativo
-        </div>
-        <div class="aside__body__languages__list__item">
-          <span>Inglês:</span> Avançado
-        </div>
-        <div class="aside__body__languages__list__item">
-          <span>Francês:</span> Intermediário
+        <div class="aside__body__languages__list__item" *ngFor="let language of resume.languages">
+          <span>{{ language.name }}:</span> {{ language.level }}
         </div>
       </div>
     </section>
